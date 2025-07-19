@@ -42,10 +42,10 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-12 sm:h-16 px-3 sm:px-4 md:px-8">
           <div className="flex items-center space-x-2 text-green-400">
             <Terminal className="w-4 h-4 sm:w-6 sm:h-6" />
-            <span className="font-mono font-bold text-sm sm:text-lg">~/portfolio</span>
+            <span className="font-sans font-bold text-sm sm:text-lg">~/portfolio</span>
           </div>
 
-          <div className="hidden lg:flex items-center space-x-6">
+          <div className="hidden lg:flex items-center space-x-6 ">
             {navItems.map((item) => (
               <button
                 key={item.name}
@@ -53,7 +53,7 @@ const Navigation = () => {
                 className="group relative px-3 py-2 font-mono text-sm text-gray-200 hover:text-green-400 transition-all duration-300 hover:bg-green-500/10 rounded border border-transparent hover:border-green-500/30"
                 title={item.command}
               >
-                <span className="text-green-400">$ </span>
+                <span className="text-green-400 ">$ </span>
                 {item.name.toLowerCase()}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-400 group-hover:w-full transition-all duration-300"></span>
               </button>
@@ -64,18 +64,18 @@ const Navigation = () => {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="lg:hidden text-green-400 p-1.5 sm:p-2 hover:bg-green-500/10 rounded border border-green-500/30 transition-colors"
           >
-            {isMobileMenuOpen ? <X className="w-4 h-4 sm:w-5 sm:h-5" /> : <Menu className="w-4 h-4 sm:w-5 sm:h-5" />}
+            {isMobileMenuOpen ? <X className="w-4 h-4 sm:w-5 sm:h-5" /> : <Menu className="w-4 h-4 sm:w-5 sm:h-5 " />}
           </button>
         </div>
 
         {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-12 sm:top-16 left-0 right-0 rounded-b-lg bg-gray-900/98 border-t border-green-500/30 max-h-[70vh] overflow-y-auto">
-            <div className="py-2 sm:py-4">
+          <div className="lg:hidden absolute top-12 sm:top-16 left-0 right-0 rounded-2xl bg-gray-900/98 border-t border-green-500/30 max-h-[70vh] py-3 sm:py-4 ">
+            <div className="py-2 sm:py-4 bg-black">
               {navItems.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left px-4 sm:px-6 py-2 sm:py-3 font-mono text-sm sm:text-base text-gray-200 hover:text-green-400 hover:bg-green-500/10 transition-colors duration-300"
+                  className="block w-full text-left px-4 sm:px-6 py-2 sm:py-3 font-mono text-sm sm:text-base text-gray-200 hover:text-green-400 hover:bg-green-500/10 transition-colors duration-500"
                 >
                   <span className="text-green-400">$ </span>
                   {item.name.toLowerCase()}

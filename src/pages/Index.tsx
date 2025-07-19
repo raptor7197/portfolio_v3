@@ -1,7 +1,7 @@
 
 import React from 'react';
 import ThreeBackground from '../components/ThreeBackground';
-import Navigation from '../components/Navigation';
+import Navigation from '../components/Navbar';
 import Hero from '../components/Hero';
 import AboutMe from '../components/AboutMe';
 import Projects from '../components/Projects';
@@ -11,6 +11,7 @@ import Hobbies from '../components/Hobbies';
 import Contact from '../components/Contact';
 import CustomCursor from '../components/CustomCursor';
 import GitHubStats from '../components/GitHubStats';
+import { Analytics } from "@vercel/analytics/next"
 
 const Index = () => {
   return (
@@ -53,6 +54,7 @@ const Index = () => {
       <div id="contact">
         <Contact />
       </div>
+      {/* <Analytics /> */} 
 
       <footer className="relative z-10 bg-gray-900/90 border-t border-green-500/30 py-8">
         <div className="container mx-auto px-6">
